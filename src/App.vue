@@ -1,11 +1,22 @@
 <script setup></script>
 
 <template>
-  <h1>You did it!</h1>
+  <h1>Gestio de Tasques</h1>
   <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+    Escriu una carta
+  </p>   
+  <button @click="mostrar = !mostrar">Afegir</button>
+
+
+  <button @click="mostrar = !mostrar">Mostrar cartes faltants</button>
+  <p v-show="mostrar">Aquest text es mostra o amaga sense eliminar-lo del DOM</p>
 </template>
 
+
+<script setup>
+import { ref } from 'vue'
+
+const mostrar = ref(true)
+</script>
 <style scoped></style>
+

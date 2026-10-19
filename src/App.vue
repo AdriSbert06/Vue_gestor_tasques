@@ -25,7 +25,7 @@
     <li v-for="carta in cartesPendents" :key="carta.id">
       {{ carta.nom }} - {{ carta.estat }}
       
-      <button @click="completarCarta(carta)">
+      <button @click="canviarEstat(carta)">
         {{ carta.estat === 'Obtinguda' ? 'Marcar pendent' : 'Marcar obtinguda' }}
       </button>
 
@@ -40,6 +40,7 @@
   font-size: 1.1em;
 }
 </style>
+
 
 <script setup>
 import { ref, computed } from 'vue'
@@ -77,7 +78,7 @@ function afegirCarta() {
   cartaNova.value = ''
 }
 
-function completarCarta(carta) {
+function canviarEstat(carta) {
   carta.estat = carta.estat === 'Obtinguda' ? 'Pendent' : 'Obtinguda'
 }
 
